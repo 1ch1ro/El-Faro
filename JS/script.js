@@ -1,4 +1,3 @@
-// 1. RELOJ CON SEGUNDOS EN VIVO
 function iniciarReloj() {
     const tick = () => {
         const ahora = new Date();
@@ -10,12 +9,10 @@ function iniciarReloj() {
     tick();
 }
 
-// 2 & 4. ARTÍCULOS DINÁMICOS Y CONTADOR
 const form = document.getElementById('form-articulo');
 const feed = document.getElementById('contenedor-articulos');
 const displayContador = document.getElementById('num-articulos');
 
-// Contar artículos iniciales
 let contador = document.querySelectorAll('article').length;
 displayContador.textContent = contador;
 
@@ -35,7 +32,6 @@ form.addEventListener('submit', (e) => {
     form.reset();
 });
 
-// 3. CONTACTO
 document.getElementById('form-contacto').addEventListener('submit', function(e) {
     e.preventDefault();
     alert("Gracias por contactarnos. Tu mensaje ha sido enviado.");

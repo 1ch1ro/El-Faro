@@ -10,7 +10,6 @@
 
 body { background-color: var(--fondo); }
 
-/* HEADER CENTRADO */
 .main-header {
     background: white;
     padding: 20px;
@@ -32,7 +31,6 @@ body { background-color: var(--fondo); }
 
 #reloj-vivo { font-weight: bold; font-size: 1.4rem; font-family: monospace; }
 
-/* NAVBAR CENTRADA (Como en la imagen) */
 .navbar {
     background-color: var(--gris-barra);
     padding: 10px 0;
@@ -56,7 +54,6 @@ body { background-color: var(--fondo); }
 
 .navbar a:hover { color: var(--primario); }
 
-/* CONTENEDORES Y GRID */
 .container { width: 90%; max-width: 1000px; margin: 20px auto; }
 
 .contador-noticias {
@@ -87,7 +84,6 @@ input, textarea { padding: 10px; border: 1px solid #ccc; width: 100%; }
     width: 150px;
 }
 
-/* MULTIMEDIA APILADO */
 .multimedia-stack { display: flex; flex-direction: column; gap: 20px; align-items: center; }
 
 .media-item { background: white; padding: 15px; border: 1px solid #ddd; width: 100%; }
