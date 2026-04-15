@@ -3,63 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Faro - Periódico Digital</title>
+    <title>El Faro - Periódico Digital (Versión Pro)</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
     <header>
-        <img src="IMG/01248_mh_04101_a-2.jpg" alt="Logotipo El Faro" width="100">
-        <h1>El Faro</h1>
+        <div class="header-content">
+            <img src="IMG/01248_mh_04101_a-2.jpg" alt="Logotipo El Faro" width="100">
+            <h1>El Faro</h1>
+        </div>
+        <div id="fecha-contenedor" class="estilo-reloj">
+            <p id="fecha-actual"></p>
+            <p id="reloj-vivo"></p>
+        </div>
         <hr>
     </header>
 
     <nav>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#admin-articulos">Publicar</a></li>
             <li><a href="#deporte">Deporte</a></li>
             <li><a href="#negocios">Negocios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
 
     <main id="inicio">
-        <section>
-            <h2>Noticias Generales</h2>
-            
-            <article>
-                <h3>Nueva plaza en el centro</h3>
-                <p><strong>Categoría:</strong> Local</p>
-                <p>Se inaugura espacio recreativo tras 6 meses de obra, beneficiando a más de 200 familias del sector.</p>
-            </article>
-            <hr>
+        <div class="contador-container">
+            <p>Total de artículos en el sitio: <span id="num-articulos">0</span></p>
+        </div>
 
-            <article>
-                <h3>Clima para el fin de semana</h3>
-                <p><strong>Categoría:</strong> Servicios</p>
-                <p>Se esperan cielos despejados y altas temperaturas. Se recomienda el uso de protector solar.</p>
-            </article>
-            <hr>
+        <section id="admin-articulos">
+            <h2>Publicar Nuevo Artículo</h2>
+            <form id="form-articulo" class="form-diseno">
+                <div class="campo">
+                    <label for="titulo-art">Título del Artículo:</label>
+                    <input type="text" id="titulo-art" placeholder="Ej: Gran maratón este domingo" required>
+                </div>
+                <div class="campo">
+                    <label for="desc-art">Descripción / Contenido:</label>
+                    <textarea id="desc-art" rows="4" placeholder="Escribe aquí el detalle de la noticia..." required></textarea>
+                </div>
+                <button type="submit" id="btn-publicar">Enviar Artículo</button>
+            </form>
+        </section>
 
-            <article>
-                <h3>Festival de Verano</h3>
-                <p><strong>Categoría:</strong> Cultura</p>
-                <p>Artistas locales se preparan para el gran evento anual que se realizará en la costanera.</p>
-            </article>
-            <hr>
+        <section id="seccion-noticias">
+            <h2>Noticias Recientes</h2>
+            <div id="contenedor-articulos" class="container">
+                </div>
         </section>
 
         <section>
             <h2>Reportaje Multimedia</h2>
             <article>
-                <h3>Video del día: Reinauguracion plaza en La Serena</h3>
-                <video controls width="500" poster="IMG/01248_mh_04101_a-2.jpg" preload="metadata">
+                <h3>Video del día: Reinauguración plaza en La Serena</h3>
+                <video controls width="100%" poster="IMG/01248_mh_04101_a-2.jpg" preload="metadata">
                     <source src="IMG/Download.mp4" type="video/mp4">
                     Tu navegador no soporta videos.
                 </video>
             </article>
 
             <article>
-                <h3>Reporte alcaldesa: Reinauguracion de plaza en La Serena</h3>
+                <h3>Reporte alcaldesa: Reinauguración de plaza</h3>
                 <audio controls>
                     <source src="IMG/ReelAudio-45931.mp3" type="audio/mpeg">
                     Tu navegador no soporta audio.
@@ -68,55 +76,25 @@
         </section>
     </main>
 
-    <section id="deporte">
-        <h2>Sección de Deportes</h2>
-
-        <article>
-            <h3>Triunfo local en el torneo</h3>
-            <p><strong>Categoría:</strong> Fútbol</p>
-            <p>El equipo de la ciudad avanza a la final tras una victoria agónica en el último minuto.</p>
-        </article>
-        <hr>
-
-        <article>
-            <h3>Maratón 10K este domingo</h3>
-            <p><strong>Categoría:</strong> Atletismo</p>
-            <p>Cierre de calles programado desde las 08:00 AM. Se esperan más de 500 corredores.</p>
-        </article>
-        <hr>
-
-        <article>
-            <h3>Nueva beca deportiva</h3>
-            <p><strong>Categoría:</strong> Institucional</p>
-            <p>Abren postulaciones para jóvenes talentos que deseen representar a la región en el extranjero.</p>
-        </article>
-        <hr>
-    </section>
-
-    <section id="negocios">
-        <h2>Negocios y Emprendimiento</h2>
-        <article>
-            <h3>Taller para Pymes</h3>
-            <p><strong>Categoría:</strong> Negocios</p>
-            <p>Se dictarán charlas gratuitas sobre digitalización financiera y gestión de inventarios.</p>
-        </article>
-        <hr>
-        <article>
-            <h3>Auge del comercio local</h3>
-            <p><strong>Categoría:</strong> Economía</p>
-            <p>Las ventas en el sector centro aumentaron un 15% este mes gracias a las nuevas ferias itinerantes.</p>
-        </article>
-        <hr>
-        <article>
-            <h3>Nueva App de delivery</h3>
-            <p><strong>Categoría:</strong> Emprendimiento</p>
-            <p>Emprendedores locales lanzan plataforma de reparto ecológico utilizando solo bicicletas.</p>
-        </article>
+    <section id="contacto" class="seccion-final">
+        <h2>Contacto</h2>
+        <form id="form-contacto" class="form-diseno">
+            <div class="campo">
+                <label for="nombre-con">Nombre completo:</label>
+                <input type="text" id="nombre-con" placeholder="Tu nombre" required>
+            </div>
+            <div class="campo">
+                <label for="msj-con">Mensaje:</label>
+                <textarea id="msj-con" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+            </div>
+            <button type="submit">Enviar Mensaje</button>
+        </form>
     </section>
 
     <footer>
         <p>&copy; 2026 El Faro - Proyecto Taller de Aplicaciones para Internet</p>
     </footer>
 
+    <script src="JS/script.js"></script>
 </body>
 </html>
